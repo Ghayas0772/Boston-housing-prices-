@@ -1,28 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boston Housing Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+        }
+
+        input[type="submit"] {
+            grid-column: span 2;
+            background-color: #0078ff;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005fcc;
+        }
+
+        .prediction {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #e7f3ff;
+            border-left: 4px solid #0078ff;
+            border-radius: 6px;
+            color: #003d8f;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .footer a {
+            color: #0078ff;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Boston Housing Price Prediction</h1>
-    <form action="/predict" method="post">
-        <!-- Example numeric input -->
-        ZN: <input type="number" step="any" name="ZN"><br>
-        INDUS: <input type="number" step="any" name="INDUS"><br>
-        CHAS: <input type="number" step="any" name="CHAS"><br>
-        NOX: <input type="number" step="any" name="NOX"><br>
-        RM: <input type="number" step="any" name="RM"><br>
-        AGE: <input type="number" step="any" name="AGE"><br>
-        DIS: <input type="number" step="any" name="DIS"><br>
-        RAD: <input type="number" step="any" name="RAD"><br>
-        PTRATIO: <input type="number" step="any" name="PTRATIO"><br>
-        CRIM_log: <input type="number" step="any" name="CRIM_log"><br>
-        TAX_log: <input type="number" step="any" name="TAX_log"><br>
-        LSTAT_log: <input type="number" step="any" name="LSTAT_log"><br>
-        <input type="submit" value="Predict">
-    </form>
-    {% if prediction %}
-        <h2>Predicted MEDV: {{ prediction }}</h2>
-    {% endif %}
+
+    <div class="container">
+        <h1>Boston Housing Price Prediction</h1>
+
+        <form action="/predict" method="post">
+            <div>
+                <label>ZN:</label>
+                <input type="number" step="any" name="ZN">
+            </div>
+            <div>
+                <label>INDUS:</label>
+                <input type="number" step="any" name="INDUS">
+            </div>
+            <div>
+                <label>CHAS:</label>
+                <input type="number" step="any" name="CHAS">
+            </div>
+            <div>
+                <label>NOX:</label>
+                <input type="number" step="any" name="NOX">
+            </div>
+            <div>
+                <label>RM:</label>
+                <input type="number" step="any" name="RM">
+            </div>
+            <div>
+                <label>AGE:</label>
+                <input type="number" step="any" name="AGE">
+            </div>
+            <div>
+                <label>DIS:</label>
+                <input type="number" step="any" name="DIS">
+            </div>
+            <div>
+                <label>RAD:</label>
+                <input type="number" step="any" name="RAD">
+            </div>
+            <div>
+                <label>PTRATIO:</label>
+                <input type="number" step="any" name="PTRATIO">
+            </div>
+            <div>
+                <label>CRIM_log:</label>
+                <input type="number" step="any" name="CRIM_log">
+            </div>
+            <div>
+                <label>TAX_log:</label>
+                <input type="number" step="any" name="TAX_log">
+            </div>
+            <div>
+                <label>LSTAT_log:</label>
+                <input type="number" step="any" name="LSTAT_log">
+            </div>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+        <div class="prediction">
+            Predicted MEDV: <strong>{{ prediction }}</strong>
+        </div>
+        {% endif %}
+
+        <div class="footer">
+            Developed by <strong>Amena Ghayas</strong> | 
+            <a href="https://github.com/Ghayas0772" target="_blank">GitHub</a>
+        </div>
+
+    </div>
+
 </body>
 </html>
