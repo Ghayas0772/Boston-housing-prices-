@@ -1,0 +1,15 @@
+boston-housing-ml/
+├─ notebooks/
+│  └─ 01_eda_and_model.ipynb
+├─ app/
+│  ├─ app.py
+│  ├─ requirements.txt
+│  └─ Dockerfile
+├─ k8s/
+│  ├─ deployment.yaml
+│  └─ service.yaml
+├─ .github/workflows/ci-cd.yml
+├─ model/
+│  └─ model.pkl   # created after training
+├─ README.md
+└─ Procfile

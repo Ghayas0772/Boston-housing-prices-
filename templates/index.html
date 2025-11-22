@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston Housing Price Prediction</title>
+</head>
+<body>
+    <h1>Boston Housing Price Prediction</h1>
+    <form action="/predict" method="post">
+        <!-- Example numeric input -->
+        ZN: <input type="number" step="any" name="ZN"><br>
+        INDUS: <input type="number" step="any" name="INDUS"><br>
+        CHAS: <input type="number" step="any" name="CHAS"><br>
+        NOX: <input type="number" step="any" name="NOX"><br>
+        RM: <input type="number" step="any" name="RM"><br>
+        AGE: <input type="number" step="any" name="AGE"><br>
+        DIS: <input type="number" step="any" name="DIS"><br>
+        RAD: <input type="number" step="any" name="RAD"><br>
+        PTRATIO: <input type="number" step="any" name="PTRATIO"><br>
+        CRIM_log: <input type="number" step="any" name="CRIM_log"><br>
+        TAX_log: <input type="number" step="any" name="TAX_log"><br>
+        LSTAT_log: <input type="number" step="any" name="LSTAT_log"><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+        <h2>Predicted MEDV: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
