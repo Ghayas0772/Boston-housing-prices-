@@ -16,4 +16,10 @@ Extra Datasets/
 __pycache__/
 .ipynb_checkpoints/
 *.pyc
+<<<<<<< HEAD
 Notebook-1.ipynb
+=======
+clean_env/
+*.pyc
+__pycache__/
+>>>>>>> d13e29e (Update requirements and runtime for Heroku)
